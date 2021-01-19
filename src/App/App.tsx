@@ -1,5 +1,5 @@
 import React from 'react';
-import RepoCMS, { CMS } from 'RepoCMS/index';
+import RepoCMS, { CMS } from 'RepoCMS';
 
 function App() {
   const cms = CMS.useContainer();
