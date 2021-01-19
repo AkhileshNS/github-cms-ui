@@ -52,6 +52,7 @@ const Button = styled.button`
   margin-left: auto;
   border-radius: 4px;
   cursor: pointer;
+  outline: none;
 
   :hover {
     background-color: ${colors.red_border};

@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { createContainer } from 'unstated-next';
-import { mode } from './types';
+import { IMode } from './types';
 
 const useCMS = () => {
   let [open, setOpen] = useState(true);
-  let [mode, switchMode] = useState<mode>('form');
+  let [mode, switchMode] = useState<IMode>('form');
+  let [selected, setSelected] = useState('');
 
   return {
     open,
-    setOpen,
     mode,
+    selected,
+
+    setOpen,
     switchMode,
+    setSelected,
   };
 };
 
