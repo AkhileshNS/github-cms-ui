@@ -17,6 +17,7 @@ interface IButton {
 }
 
 const Button = styled.button<IButton>`
+  margin-left: 4px;
   padding: 4px 12px;
   color: white;
   border-radius: 4px;
@@ -44,6 +45,7 @@ const Button = styled.button<IButton>`
 `;
 
 const Footer: React.FC<IFooter> = (props) => {
+  // Primary Button
   let text = 'Update';
   let onClick = props.onUpdate;
   let disabled = false;
@@ -79,6 +81,19 @@ const Footer: React.FC<IFooter> = (props) => {
         }>
         {text}
       </Button>
+      {(props.mode === 'manage-gallery' && props.selected !== '') ||
+      props.mode === 'select-gallery' ? (
+        <Button
+          onClick={() => {
+            props.setSelected('');
+            if (props.mode === 'select-gallery') {
+              props.switchMode('form');
+            }
+          }}
+          color='green'>
+          {props.mode === 'manage-gallery' ? 'Clear Selection' : 'Cancel'}
+        </Button>
+      ) : null}
     </Container>
   );
 };
